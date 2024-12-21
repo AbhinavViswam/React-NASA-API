@@ -25,7 +25,7 @@ function APOD() {
                     {loading ? (
                         <div className="w-full h-72 bg-gray-700 animate-pulse"></div>
                     ) : (
-                        <img src={data.hdurl} alt={data.title} className="w-full h-72 object-cover" />
+                        <a href={data.hdurl} target='_blank'><img src={data.url} alt={data.title} className="w-full h-72 object-cover" /></a>
                     )}
                 </div>
                 <div className="p-6">

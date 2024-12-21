@@ -25,7 +25,7 @@ function Planets() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
-      <div className="mb-8">
+      <div className="mb-8 flex flex-wrap gap-4">
         <input
           type="text"
           placeholder="Enter Planet Name"
@@ -34,24 +34,45 @@ function Planets() {
         />
         <button
           onClick={handleClick}
-          className="ml-4 p-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition duration-200"
+          className="p-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition duration-200"
         >
           GO
         </button>
       </div>
-      <div className="w-full max-w-md bg-gray-800 p-6 rounded-lg shadow-lg">
+      <div className="w-full max-w-5xl">
         {loading && (
           <p className="text-center text-gray-400">Loading...</p>
         )}
         {data ? (
           data.length > 0 ? (
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-center">{data[0].name}</h3>
-              <p><span className="font-bold">Mass:</span> {data[0].mass}</p>
-              <p><span className="font-bold">Radius:</span> {data[0].radius}</p>
-              <p><span className="font-bold">Period:</span> {data[0].period}</p>
-              <p><span className="font-bold">Temp:</span> {data[0].temperature}</p>
-              <p><span className="font-bold">LY:</span> {data[0].distance_light_year}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {data.map((planet, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center"
+                >
+                  <h3 className="text-2xl font-bold text-center mb-4">
+                    {planet.name}
+                  </h3>
+                  <p className="text-sm">
+                    <span className="font-bold">Mass:</span> {planet.mass}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-bold">Radius:</span> {planet.radius}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-bold">Period:</span> {planet.period}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-bold">Temp:</span>{" "}
+                    {planet.temperature}
+                  </p>
+                  <p className="text-sm">
+                    <span className="font-bold">LY:</span>{" "}
+                    {planet.distance_light_year}
+                  </p>
+                </div>
+              ))}
             </div>
           ) : (
             <p className="text-center text-gray-400">No planet data found</p>
