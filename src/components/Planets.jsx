@@ -81,7 +81,7 @@ function Planets() {
             <p className="text-center text-gray-400">No planet data found</p>
           )
         ) : (
-          <p className="text-center text-gray-400">Enter a planet name</p>
+          ""
         )}
       </div>
     </div>
