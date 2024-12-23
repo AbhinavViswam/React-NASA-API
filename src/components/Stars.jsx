@@ -84,7 +84,7 @@ function Stars() {
             <p className="text-center text-gray-400">No stars found</p>
           )
         ) : (
-          <p className="text-center text-gray-400">Enter a star name</p>
+          ""
         )}
       </div>
     </div>
