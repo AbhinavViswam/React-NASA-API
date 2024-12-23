@@ -24,7 +24,7 @@ function Planets() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-[80vh] bg-gray-900 text-white flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
         PLANET DETAILS
       </h1>

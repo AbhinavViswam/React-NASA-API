@@ -8,13 +8,14 @@ function Navbar() {
 
   return (
     <nav className="bg-gray-800 text-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-        
-          <h1 className="text-xl font-bold text-cyan-500">Space Tour</h1>
+      <div className="container mx-auto px-6">
+        <div className="flex justify-between items-center py-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-cyan-500">Space Tour</h1>
+
+          {/* Hamburger Button: Visible on mobile and tablet screens */}
           <button
             onClick={toggleMenu}
-            className="sm:hidden text-gray-300 focus:outline-none hover:text-cyan-400 transition duration-200"
+            className="lg:hidden text-gray-300 focus:outline-none hover:text-cyan-400 transition duration-200 w-8 h-8"
           >
             {isOpen ? (
               <svg
@@ -22,7 +23,7 @@ function Navbar() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-full h-full"
               >
                 <path
                   strokeLinecap="round"
@@ -37,7 +38,7 @@ function Navbar() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-full h-full"
               >
                 <path
                   strokeLinecap="round"
@@ -52,7 +53,7 @@ function Navbar() {
 
         {/* Links */}
         <ul
-          className={`sm:flex sm:flex-row sm:space-x-6 sm:py-0 sm:space-y-0 flex-col items-center justify-center space-y-4 py-4 ${
+          className={`lg:flex lg:flex-row lg:space-x-10 lg:py-0 lg:space-y-0 flex-col items-center justify-center space-y-6 py-8 ${
             isOpen ? "block" : "hidden"
           }`}
         >
@@ -60,7 +61,7 @@ function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `text-base sm:text-lg font-semibold hover:text-cyan-400 transition duration-200 ${
+                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
                   isActive ? "text-cyan-500" : "text-gray-300"
                 }`
               }
@@ -72,7 +73,7 @@ function Navbar() {
             <NavLink
               to="/apod"
               className={({ isActive }) =>
-                `text-base sm:text-lg font-semibold hover:text-cyan-400 transition duration-200 ${
+                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
                   isActive ? "text-cyan-500" : "text-gray-300"
                 }`
               }
@@ -84,7 +85,7 @@ function Navbar() {
             <NavLink
               to="/planet-details"
               className={({ isActive }) =>
-                `text-base sm:text-lg font-semibold hover:text-cyan-400 transition duration-200 ${
+                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
                   isActive ? "text-cyan-500" : "text-gray-300"
                 }`
               }
@@ -96,7 +97,7 @@ function Navbar() {
             <NavLink
               to="/star-details"
               className={({ isActive }) =>
-                `text-base sm:text-lg font-semibold hover:text-cyan-400 transition duration-200 ${
+                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
                   isActive ? "text-cyan-500" : "text-gray-300"
                 }`
               }

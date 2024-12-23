@@ -20,7 +20,7 @@ function APOD() {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col min-h-[80vh] items-center justify-center bg-gray-900 text-white px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl w-full bg-gray-800 shadow-lg rounded-lg overflow-hidden">
                 <h1 className="text-xl sm:text-2xl font-bold mb-2 text-center py-4">
                     Astronomy Picture Of The Day

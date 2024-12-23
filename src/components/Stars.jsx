@@ -29,26 +29,26 @@ function Stars() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
-      <h1 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
+    <div className="bg-gray-900 text-white flex flex-col items-center justify-center p-6 sm:p-8 min-h-[80vh]">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
         STAR DETAILS
       </h1>
-      <div className="mb-8 flex flex-wrap gap-4 justify-center">
+      <div className="mb-8 flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
         <input
           type="text"
           placeholder="Enter Star Name"
           value={star}
           onChange={(e) => setStar(e.target.value)}
-          className="p-3 w-full sm:w-auto text-black rounded-lg border-2 border-gray-300 outline-none focus:border-cyan-500"
+          className="p-4 w-full sm:w-80 text-black rounded-lg border-2 border-gray-300 outline-none focus:border-cyan-500"
         />
         <button
           onClick={handleClick}
-          className="p-3 w-full sm:w-auto bg-cyan-500 rounded-lg hover:bg-cyan-600 transition duration-200"
+          className="p-4 w-full sm:w-auto bg-cyan-500 rounded-lg hover:bg-cyan-600 transition duration-200"
         >
           GO
         </button>
       </div>
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-5xl mx-auto">
         {loading && <p className="text-center text-gray-400">Loading...</p>}
         {data ? (
           data.length > 0 ? (
@@ -58,22 +58,22 @@ function Stars() {
                   key={index}
                   className="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4"
                 >
-                  <h3 className="text-lg sm:text-xl font-bold text-center text-cyan-400">
+                  <h3 className="text-xl sm:text-2xl font-bold text-center text-cyan-400">
                     {star.name}
                   </h3>
-                  <p className="text-xs sm:text-sm">
+                  <p className="text-sm sm:text-lg">
                     <span className="font-bold">Constellation:</span>{" "}
                     {star.constellation}
                   </p>
-                  <p className="text-xs sm:text-sm">
+                  <p className="text-sm sm:text-lg">
                     <span className="font-bold">Light Year:</span>{" "}
                     {star.distance_light_year}
                   </p>
-                  <p className="text-xs sm:text-sm">
+                  <p className="text-sm sm:text-lg">
                     <span className="font-bold">Declination:</span>{" "}
                     {star.declination}
                   </p>
-                  <p className="text-xs sm:text-sm">
+                  <p className="text-sm sm:text-lg">
                     <span className="font-bold">Spectral Class:</span>{" "}
                     {star.spectral_class}
                   </p>
