@@ -20,14 +20,14 @@ function APOD() {
     }, []);
 
     return (
-        <div className="flex flex-col min-h-[80vh] items-center justify-center bg-gray-900 text-white px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl w-full bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-                <h1 className="text-xl sm:text-2xl font-bold mb-2 text-center py-4">
+        
+            <div className='p-10'>
+                <h1>
                     Astronomy Picture Of The Day
                 </h1>
-                <div className="relative">
+                <div>
                     {loading ? (
-                        <div className="w-full h-64 sm:h-72 bg-gray-700 animate-pulse"></div>
+                        <div></div>
                     ) : (
                         <a
                             href={data.hdurl}
@@ -37,34 +37,32 @@ function APOD() {
                             <img
                                 src={data.url}
                                 alt={data.title}
-                                className="w-full h-64 sm:h-72 object-cover"
+                                className='w-screen h-[50vh] object-cover'
                             />
                         </a>
                     )}
                 </div>
-                <div className="p-4 sm:p-6">
+                <div className='flex flex-col items-center justify-center gap-6'>
                     {loading ? (
-                        <div className="space-y-4">
-                            <div className="h-6 bg-gray-700 rounded w-3/4 animate-pulse"></div>
-                            <div className="h-4 bg-gray-700 rounded w-1/2 animate-pulse"></div>
-                            <div className="h-20 bg-gray-700 rounded w-full animate-pulse"></div>
+                        <div>
+                        
                         </div>
                     ) : (
                         <>
-                            <h1 className="text-lg sm:text-2xl font-bold mb-2">
+                            <div className='flex flex-col gap-2 text-4xl self-start px-16 font-bold'>
+                            <h1 className='text-5xl font-black'>
                                 {data.title}
                             </h1>
-                            <div className="text-sm sm:text-base text-gray-400 mb-4">
                                 {data.date}
                             </div>
-                            <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-h-[30vh] overflow-y-auto px-2">
+                            <p className="text-4xl px-16 text-balanced">
                                 {data.explanation}
                             </p>
                         </>
                     )}
                 </div>
             </div>
-        </div>
+       
     );
 }
 

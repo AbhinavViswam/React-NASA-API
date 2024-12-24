@@ -1,45 +1,32 @@
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaGithub } from 'react-icons/fa';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-300 p-8">
-      <div className="text-center mb-6">
-        <p
-          className="text-3xl sm:text-4xl font-medium hover:text-cyan-500 transition duration-300 cursor-pointer"
-          onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
-          onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-          style={{ transition: "transform 0.3s ease" }}
+    <footer className="bg-gray-800 text-white p-4 mt-8 flex flex-col gap-8  lg:max-h-[15vh]">
+      
+      <div className="flex justify-center gap-20 mt-4">
+        <a
+          href="https://www.instagram.com/_abhinav_viswam/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-2xl hover:text-pink-500"
         >
-          Created by{" "}
-          <span className="text-cyan-500">Abhinav Viswam</span>
-        </p>
+          <FaInstagram className="text-5xl lg:text-4xl" />
+          <span className='text-4xl lg:text-2xl'>Instagram</span>
+        </a>
+        <a
+          href="https://github.com/AbhinavViswam"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-2xl hover:text-gray-500"
+        >
+          <FaGithub className="text-5xl lg:text-4xl" />
+          <span className='text-4xl lg:text-2xl'>GitHub</span>
+        </a>
       </div>
-      <ul className="flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-12">
-        <li>
-          <a
-            href="https://github.com/AbhinavViswam"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-4 text-gray-300 hover:text-cyan-500 transition duration-200"
-          >
-            <FaGithub size={32} />
-            <span className="text-2xl sm:text-3xl">GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/_abhinav_viswam/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-4 text-gray-300 hover:text-pink-500 transition duration-200"
-          >
-            <FaInstagram size={32} />
-            <span className="text-2xl sm:text-3xl">Instagram</span>
-          </a>
-        </li>
-      </ul>
+        <p className="text-right">Abhinav Viswam</p>
     </footer>
   );
-}
+};
 
 export default Footer;

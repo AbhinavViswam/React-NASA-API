@@ -1,69 +1,34 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <nav className="bg-gray-800 text-white shadow-lg">
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center py-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-cyan-500">Space Tour</h1>
+    <nav className="flex bg-gray-800 text-white shadow-lg min-h-[8vh] relative lg:min-h-[15vh]">
+      <h1 className="font-black text-6xl flex items-center justify-center w-full lg:w-full">Space Tour</h1>
 
-          {/* Hamburger Button: Visible on mobile and tablet screens */}
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden text-gray-300 focus:outline-none hover:text-cyan-400 transition duration-200 w-8 h-8"
-          >
-            {isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-full h-full"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-full h-full"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
+      {/* Hamburger Icon */}
+      <div className="lg:hidden flex items-center justify-center px-4">
+        <button onClick={toggleMenu} className="text-6xl">
+          {isMenuOpen ? 'X' : '☰'}
+        </button>
+      </div>
 
-        {/* Links */}
-        <ul
-          className={`lg:flex lg:flex-row lg:space-x-10 lg:py-0 lg:space-y-0 flex-col items-center justify-center space-y-6 py-8 ${
-            isOpen ? "block" : "hidden"
-          }`}
-        >
+      {/* Navbar Links */}
+      <ul
+        className={`lg:flex flex-col lg:flex-row gap-8 text-4xl lg:text-2xl ${isMenuOpen ? 'flex' : 'hidden'} lg:block absolute lg:relative top-full lg:top-0 left-0 w-full bg-gray-800 py-10 lg:py-0`}
+      >
+        <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-10">
           <li>
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
-                  isActive ? "text-cyan-500" : "text-gray-300"
-                }`
+                isActive ? 'text-yellow-500' : 'text-white'
               }
             >
               Home
@@ -73,9 +38,7 @@ function Navbar() {
             <NavLink
               to="/apod"
               className={({ isActive }) =>
-                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
-                  isActive ? "text-cyan-500" : "text-gray-300"
-                }`
+                isActive ? 'text-yellow-500' : 'text-white'
               }
             >
               Astronomy
@@ -85,9 +48,7 @@ function Navbar() {
             <NavLink
               to="/planet-details"
               className={({ isActive }) =>
-                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
-                  isActive ? "text-cyan-500" : "text-gray-300"
-                }`
+                isActive ? 'text-yellow-500' : 'text-white'
               }
             >
               Planet Details
@@ -97,16 +58,14 @@ function Navbar() {
             <NavLink
               to="/star-details"
               className={({ isActive }) =>
-                `text-xl sm:text-2xl font-semibold hover:text-cyan-400 transition duration-200 ${
-                  isActive ? "text-cyan-500" : "text-gray-300"
-                }`
+                isActive ? 'text-yellow-500' : 'text-white'
               }
             >
               Star Details
             </NavLink>
           </li>
-        </ul>
-      </div>
+        </div>
+      </ul>
     </nav>
   );
 }
